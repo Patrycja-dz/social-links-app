@@ -1,0 +1,212 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: currentColor;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  --primary-green: hsl(75, 94%, 57%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+
+  --body-font-size: 14px;
+  --body-font: "Inter", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--off-black);
+  font-family: var(--body-font);
+  font-weight: var(--font-weight-regular);
+  font-variation-settings: "slnt" 0;
+  color: var(--neutral-white);
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  font-size: var(--body-font-size);
+}
+.profile-container {
+  background-color: var(--dark-grey);
+  width: 384px;
+  padding: 40px;
+  min-height: 528px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+}
+.avatar {
+  width: 88px;
+  height: 88px;
+  margin: 0;
+  padding: 0;
+}
+.avatar img {
+  border-radius: 50%;
+}
+.profile-info {
+  width: 100%;
+  text-align: center;
+  margin: 24px 0;
+}
+.profile-name {
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+}
+.profile-location {
+  margin-top: 4px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary-green);
+}
+.bio {
+  margin-bottom: 24px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  text-align: justify;
+}
+.social-links {
+  width: 304px;
+  overflow: hidden;
+}
+.social-item:not(:first-child) {
+  margin-top: 16px;
+}
+.social-item {
+  background-color: var(--neutral-grey);
+  padding: 12px;
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s all;
+}
+.social-item a {
+  /* position: relative; */
+  z-index: 1;
+}
+/* .social-item .wave:hover {
+  box-shadow: inset 30.5em 0 0 0 var(--primary-green);
+  color: var(--dark-grey);
+  top: 50%;
+} */
+
+.wave {
+  position: absolute;
+  overflow: hidden;
+  width: 320px;
+  background: teal;
+  mask-image: url("./assets/images/wave.svg");
+  -webkit-mask-image: url("./assets/images/wave.svg");
+  background-size: 200% 100%;
+  height: 50%;
+  left: 0;
+  animation: wave 2s infinite linear;
+  transition: 0.5s;
+  transform: translateY(50%);
+}
+
+@keyframes wave {
+  0% {
+    /* background-position-x: 0; */
+    transform: translateX(0);
+  }
+  45% {
+    background-position-x: 100%;
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
