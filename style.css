@@ -130,6 +130,13 @@ body {
 }
 .avatar img {
   border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.avatar img:hover {
+  scale: 1.1;
+  -webkit-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
 }
 .profile-info {
   width: 100%;
@@ -172,4 +179,9 @@ body {
   position: relative;
   overflow: hidden;
   transition: 0.3s all;
+}
+
+.social-item:hover {
+  background-color: var(--primary-green);
+  color: var(--off-black);
 }
